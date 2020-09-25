@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="rpsstyle.css" />
+    <script src="rpsscript.js"></script>
+  </head>
+  <body>
+    <section id="inbox">
+      <h1>ROCK,PAPER,SCISSORS</h1>
+      <h2>The first player to get 5 points wins the game</h2>
+      <h2>
+        Your Score:<span id="yscore"></span>|Computer Score:<span
+          id="cscore"
+        ></span>
+      </h2>
+      <span id="dispbuttons">
+        <button type="button" onclick="rock()">ROCK</button>
+        <button type="button" onclick="paper()">PAPER</button>
+        <button type="button" onclick="scissor()">SCISSOR</button>
+      </span>
+      <span id="newbuttons" style="display: none"
+        ><button type="button" onclick="newGame()">NEWGAME</button></span
+      >
+      <h2>
+        Your Choice:<span id="ychoice"></span>|Computer Choice:<span
+          id="cchoice"
+        ></span>
+      </h2>
+      <h2 id="change">Click one of the buttons to begin the game!</h2>
+    </section>
+  </body>
+</html>

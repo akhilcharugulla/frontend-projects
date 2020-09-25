@@ -35,6 +35,7 @@ nav button {
   border-radius: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
+  outline: none;
 }
 #main input:hover {
   box-shadow: 5px 5px 5px #f2f2f2;
