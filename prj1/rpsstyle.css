@@ -1,6 +1,7 @@
 html {
   /*background-color: lavender;*/
   background-image: url("https://external-preview.redd.it/--8SlniUnSybTsNISzch8vu1BkENcx1mEAYtdJlRLDk.png?auto=webp&s=111dcce7244aed5a625ceb700086c510e4eb134a");
+  background-repeat: no-repeat;
   font-family: monospace;
   font-size: 18px;
 }
