@@ -2,14 +2,51 @@ var computerscore = 0,
   yourscore = 0,
   yourchoice,
   computerchoice,
-  winningscore = 5;
+  winningscore = 5,
+  usersetvalue = 0,
+  setswonuser = 0,
+  setswoncomputer = 0;
 
 const setsFunction = () => {
+  usersetvalue = document.getElementById("sets").value;
   document.getElementById("main").style.display = "none";
   document.getElementById("inbox").style.display = "block";
   document.getElementById("displayscore").style.display = "block";
+  document.getElementById("aboutsets").style.display = "block";
+  document.getElementById("spanaboutsets").innerHTML = usersetvalue;
 };
 
+const nextSet = (playercontainer, computercontainer) => {
+  (computerscore = 0), (yourscore = 0);
+  document.getElementById(playercontainer).innerHTML = "";
+  document.getElementById(computercontainer).innerHTML = "";
+  document.getElementById("dispbuttons").style.display = "block";
+  document.getElementById("newbuttons").style.display = "none";
+  document.getElementById("newsetbuttons").style.display = "none";
+  document.getElementById("yscore").innerHTML = yourscore;
+  document.getElementById("cscore").innerHTML = computerscore;
+};
+
+const evaluateSetScore = (setswoncomputer, setswonuser) => {
+  var tot = setswoncomputer + setswonuser;
+  if (setswonuser == setswoncomputer && tot == usersetvalue) {
+    document.getElementById("newsetbuttons").style.display = "none";
+    console.log("draw");
+    document.getElementById("change").innerHTML = "It's a Draw .";
+  } else if (setswonuser > setswoncomputer && tot == usersetvalue) {
+    document.getElementById("newsetbuttons").style.display = "none";
+    console.log("u won game");
+    document.getElementById("change").innerHTML =
+      "Congratulation! You've won the game.";
+  } else if (setswoncomputer > setswonuser && tot == usersetvalue) {
+    document.getElementById("newsetbuttons").style.display = "none";
+    console.log("computer won the game");
+    document.getElementById("change").innerHTML =
+      "Sorry! You've lost the game.";
+  } else {
+    console.log("pass");
+  }
+};
 const getComputerChoice = () => {
   const arr = ["rock", "paper", "scissor"];
   computerchoice = arr[Math.floor(Math.random() * arr.length)];
@@ -17,7 +54,7 @@ const getComputerChoice = () => {
   var abc = document.createElement("p");
   abc.textContent = computerchoice;
   dont.appendChild(abc);
-  document.getElementById("cchoice").innerHTML = computerchoice;
+  //document.getElementById("cchoice").innerHTML = computerchoice;
 };
 const evaluateScore = () => {
   console.log("evaluation is called");
@@ -25,27 +62,27 @@ const evaluateScore = () => {
     document.getElementById("change").innerHTML = "Oops its a Draw";
   } else if (yourchoice == "rock" && computerchoice == "scissor") {
     yourscore++;
-    document.getElementById("change").innerHTML = "Congrats You Won This Round";
+    document.getElementById("change").innerHTML = "You Won This Round";
     document.getElementById("yscore").innerHTML = yourscore;
   } else if (yourchoice == "rock" && computerchoice == "paper") {
     computerscore++;
-    document.getElementById("change").innerHTML = "Sorry You Lose This Round";
+    document.getElementById("change").innerHTML = "You Lose This Round";
     document.getElementById("cscore").innerHTML = computerscore;
   } else if (yourchoice == "paper" && computerchoice == "rock") {
     yourscore++;
-    document.getElementById("change").innerHTML = "Congrats You Won This Round";
+    document.getElementById("change").innerHTML = "You Won This Round";
     document.getElementById("yscore").innerHTML = yourscore;
   } else if (yourchoice == "paper" && computerchoice == "scissor") {
     computerscore++;
-    document.getElementById("change").innerHTML = "Sorry You Lose This Round";
+    document.getElementById("change").innerHTML = "You Lose This Round";
     document.getElementById("cscore").innerHTML = computerscore;
   } else if (yourchoice == "scissor" && computerchoice == "paper") {
     yourscore++;
-    document.getElementById("change").innerHTML = "Congrats You Won This Round";
+    document.getElementById("change").innerHTML = "You Won This Round";
     document.getElementById("yscore").innerHTML = yourscore;
   } else if (yourchoice == "scissor" && computerchoice == "rock") {
     computerscore++;
-    document.getElementById("change").innerHTML = "Sorry You Lose This Round";
+    document.getElementById("change").innerHTML = "You Lose This Round";
     document.getElementById("cscore").innerHTML = computerscore;
   }
   isMatchOver();
@@ -58,8 +95,7 @@ const rock = () => {
   var abc = document.createElement("p");
   abc.textContent = "rock";
   dont.appendChild(abc);
-
-  document.getElementById("ychoice").innerHTML = yourchoice;
+  //document.getElementById("ychoice").innerHTML = yourchoice;
   getComputerChoice();
   evaluateScore();
 };
@@ -72,7 +108,7 @@ const paper = () => {
   abc.textContent = "paper";
   dont.appendChild(abc);
 
-  document.getElementById("ychoice").innerHTML = yourchoice;
+  //document.getElementById("ychoice").innerHTML = yourchoice;
   getComputerChoice();
   evaluateScore();
 };
@@ -85,7 +121,7 @@ const scissor = () => {
   abc.textContent = "scissor";
   dont.appendChild(abc);
 
-  document.getElementById("ychoice").innerHTML = yourchoice;
+  //document.getElementById("ychoice").innerHTML = yourchoice;
   getComputerChoice();
   evaluateScore();
 };
@@ -96,20 +132,23 @@ const newGame = () => {
 };
 
 const isMatchOver = () => {
-  var yfinal = document.getElementById("yscore").innerHTML;
-  var cfinal = document.getElementById("cscore").innerHTML;
-  if (cfinal == "5") {
-    document.getElementById("change").innerHTML =
-      "Sorry! You've lost the game.";
+  if (computerscore == "5") {
+    document.getElementById("change").innerHTML = "Sorry! You've lost the Set.";
     document.getElementById("dispbuttons").style.display = "none";
     document.getElementById("newbuttons").style.display = "inline";
     document.getElementById("newsetbuttons").style.display = "inline";
-  } else if (yfinal == "5") {
+    setswoncomputer++;
+    evaluateSetScore(setswoncomputer, setswonuser);
+    document.getElementById("cset").innerHTML = setswoncomputer;
+  } else if (yourscore == "5") {
     document.getElementById("change").innerHTML =
-      "Congratulation! You've won the game.";
+      "Congratulation! You've won the Set.";
     document.getElementById("dispbuttons").style.display = "none";
     document.getElementById("newbuttons").style.display = "inline";
     document.getElementById("newsetbuttons").style.display = "inline";
+    setswonuser++;
+    evaluateSetScore(setswoncomputer, setswonuser);
+    document.getElementById("uset").innerHTML = setswonuser;
   } else {
   }
 };
