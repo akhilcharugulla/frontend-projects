@@ -4,9 +4,19 @@ var computerscore = 0,
   computerchoice,
   winningscore = 5;
 
+const setsFunction = () => {
+  document.getElementById("main").style.display = "none";
+  document.getElementById("inbox").style.display = "block";
+  document.getElementById("displayscore").style.display = "block";
+};
+
 const getComputerChoice = () => {
   const arr = ["rock", "paper", "scissor"];
   computerchoice = arr[Math.floor(Math.random() * arr.length)];
+  var dont = document.getElementById("computercontainer");
+  var abc = document.createElement("p");
+  abc.textContent = computerchoice;
+  dont.appendChild(abc);
   document.getElementById("cchoice").innerHTML = computerchoice;
 };
 const evaluateScore = () => {
@@ -43,6 +53,12 @@ const evaluateScore = () => {
 
 const rock = () => {
   yourchoice = "rock";
+
+  var dont = document.getElementById("playercontainer");
+  var abc = document.createElement("p");
+  abc.textContent = "rock";
+  dont.appendChild(abc);
+
   document.getElementById("ychoice").innerHTML = yourchoice;
   getComputerChoice();
   evaluateScore();
@@ -50,6 +66,12 @@ const rock = () => {
 
 const paper = () => {
   yourchoice = "paper";
+
+  var dont = document.getElementById("playercontainer");
+  var abc = document.createElement("p");
+  abc.textContent = "paper";
+  dont.appendChild(abc);
+
   document.getElementById("ychoice").innerHTML = yourchoice;
   getComputerChoice();
   evaluateScore();
@@ -57,6 +79,12 @@ const paper = () => {
 
 const scissor = () => {
   yourchoice = "scissor";
+
+  var dont = document.getElementById("playercontainer");
+  var abc = document.createElement("p");
+  abc.textContent = "scissor";
+  dont.appendChild(abc);
+
   document.getElementById("ychoice").innerHTML = yourchoice;
   getComputerChoice();
   evaluateScore();
@@ -74,12 +102,14 @@ const isMatchOver = () => {
     document.getElementById("change").innerHTML =
       "Sorry! You've lost the game.";
     document.getElementById("dispbuttons").style.display = "none";
-    document.getElementById("newbuttons").style.display = "block";
+    document.getElementById("newbuttons").style.display = "inline";
+    document.getElementById("newsetbuttons").style.display = "inline";
   } else if (yfinal == "5") {
     document.getElementById("change").innerHTML =
       "Congratulation! You've won the game.";
     document.getElementById("dispbuttons").style.display = "none";
-    document.getElementById("newbuttons").style.display = "block";
+    document.getElementById("newbuttons").style.display = "inline";
+    document.getElementById("newsetbuttons").style.display = "inline";
   } else {
   }
 };

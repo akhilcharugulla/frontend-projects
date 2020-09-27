@@ -5,13 +5,25 @@
     <script src="rpsscript.js"></script>
   </head>
   <body>
+    <section id="main">
+      <h1>ROCK,PAPER,SCISSORS</h1>
+      <label>Enter No of Sets</label>
+      <input
+        type="text"
+        id="sets"
+        size="5"
+        oninput="setsFunction()"
+        autofocus
+      />
+    </section>
+
     <section id="inbox">
       <h1>ROCK,PAPER,SCISSORS</h1>
       <h2>The first player to get 5 points wins the game</h2>
       <h2>
-        Your Score:<span id="yscore"></span>|Computer Score:<span
-          id="cscore"
-        ></span>
+        Your Score:<span id="yscore">0</span>|Computer Score:<span id="cscore"
+          >0</span
+        >
       </h2>
       <span id="dispbuttons">
         <button type="button" onclick="rock()">ROCK</button>
@@ -21,6 +33,15 @@
       <span id="newbuttons" style="display: none"
         ><button type="button" onclick="newGame()">NEWGAME</button></span
       >
+      <span id="newsetbuttons" style="display: none"
+        ><button type="button" onclick="nextSet()">NEXTSET</button></span
+      >
+      <!--
+      <h2>
+        Your Choice:<span id="ychoice"></span>|Computer Choice:<span
+          id="cchoice"
+        ></span>
+      </h2>-->
       <h2>
         Your Choice:<span id="ychoice"></span>|Computer Choice:<span
           id="cchoice"
@@ -28,5 +49,17 @@
       </h2>
       <h2 id="change">Click one of the buttons to begin the game!</h2>
     </section>
+
+    <div id="displayscore">
+      <h1>
+        <span id="playerdisplay">Players History</span> |<span
+          id="computerdisplay"
+        >
+          Computers History</span
+        >
+      </h1>
+      <span id="playercontainer"></span>
+      <span id="computercontainer"></span>
+    </div>
   </body>
 </html>
