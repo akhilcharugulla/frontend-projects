@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="calc.js"></script>
+  <link rel="stylesheet" href="calc.css">
+  </head>
+  <body>
+    <header id="heading">
+      <h1>CALCULATOR</h1>
+    </header>
+    <section>
+      <div id="display"></div>
+      <div id="history"><span style="left: 136vh;color:saddlebrown;position:fixed"><u>HISTORY</u></span>
+        <button onclick=clearhistory()>clearhistory</button>
+        <div id="history-data" style="margin-top:40px"></div>
+      </div>
+      <div id="grid-container">
+        <div class="griditem"><button type="button" id="x2" onclick="squarecall()">x<sup style="font-size:20px">2<sup></button></div>
+        <div class="griditem">
+          <button type="button" onclick="factorialcall()" id="x!">x!</button>
+        </div>
+        <div class="griditem">
+          <button type="button" onclick="sqrtcall()" id="√sqrt">√</button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="8" onclick="lettererase()" id="del">⌫</button>
+        </div>
+        <div class="griditem">
+          <button type="button" onclick="clearcall()" id="CE">CE</button>
+        </div>
+        
+        <div class="griditem">
+          <button type="button" data-key="103" onclick="numbercall('7')" id="7">7</button>
+        </div>
+        <div class="griditem">
+          <button type="button"data-key="104" onclick="numbercall('8')" id="8">8</button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="105" onclick="numbercall('9')" id="9">9</button>
+        </div>
+        <div class="griditem">
+          <button type="button" onclick="numbercall('%')" id="%">%</button>
+        </div>
+        <div class="griditem">
+          <button type="button" onclick="plusminuscall()" id="±">±</button>
+        </div>
+
+        <div class="griditem">
+          <button type="button" data-key="100" onclick="numbercall('4')" id="4">4</button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="101" onclick="numbercall('5')" id="5">5</button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="102" onclick="numbercall('6')" id="6">6</button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="106" style="font-size:50px; padding-top:20px" onclick="operatorcall('*')" id="*">*</button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="111" onclick="operatorcall('/')" id="/">/</button>
+        </div>
+
+        <div class="griditem">
+          <button type="button" data-key="97" onclick="numbercall('1')" id="1" data-key="97">1</button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="98" onclick="numbercall('2')" id="2">2</button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="99" onclick="numbercall('3')" id="3">3</button>
+        </div>
+        <div class="griditemadd">
+          <button
+            type="button" data-key="107"
+            onclick="operatorcall('+')"
+            style="height: 163px ;font-size:35px;"
+            id="+"
+          >
+            +
+          </button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="109" style="font-size:40px" onclick="operatorcall('-')" id="-">-</button>
+        </div>
+
+        <div class="griditem">
+          <button type="button" data-key="96" onclick="numbercall('0')" id="0">0</button>
+        </div>
+        <div class="griditem">
+          <button type="button" onclick="numbercall('00')" id="00">00</button>
+        </div>
+        <div class="griditem">
+          <button type="button" onclick="operatorcall('.')" id=".">.</button>
+        </div>
+        <div class="griditem">
+          <button type="button" data-key="13" onclick="equalscall('=')" id="=">=</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

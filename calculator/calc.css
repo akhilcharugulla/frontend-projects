@@ -1,0 +1,76 @@
+html {
+  overflow: hidden;
+  background-color: rgb(240, 231, 219);
+}
+#heading {
+  margin-left: 80vh;
+  color: rgb(129, 118, 104);
+}
+#grid-container {
+  position: relative;
+  border: 5px solid saddlebrown;
+  border-radius: 5px;
+  left: 40vh;
+  top: 10vh;
+  max-width: 460px;
+  max-height: 500px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 5px;
+  padding-top: 120px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+#display {
+  position: absolute;
+  top: 21vh;
+  left: 42.5vh;
+  width: 440px;
+  height: 80px;
+  padding-top: 10px;
+  font-size: xx-large;
+  text-align: right;
+  border: 5px solid saddlebrown;
+  background-color: rgb(216, 218, 208);
+  border-radius: 5px;
+}
+#history {
+  position: absolute;
+  top: 20vh;
+  left: 120vh;
+  width: 440px;
+  height: 540px;
+  font-size: xx-large;
+  text-align: center;
+  border: 5px solid saddlebrown;
+  color: rgb(32, 31, 29);
+  background-color: rgb(216, 218, 208);
+  border-radius: 5px;
+  overflow: auto;
+}
+button {
+  width: 80px;
+  font-size: xx-large;
+  height: 80px;
+  border: 3px solid black;
+  border-radius: 10px;
+  outline: none;
+}
+button:hover {
+  background-color: #c5b8b8;
+}
+.griditemadd {
+  grid-row-start: 4;
+  grid-row-end: 6;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+#history button {
+  position: fixed;
+  width: 110px;
+  height: 30px;
+  font-size: large;
+  margin-top: 5px;
+  left: 159vh;
+}
