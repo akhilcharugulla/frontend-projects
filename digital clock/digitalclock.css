@@ -1,0 +1,21 @@
+body {
+  background: black;
+}
+#main {
+  position: relative;
+  top: 0vh;
+  left: 85vh;
+  font-size: 30px;
+  color: wheat;
+  max-width: 100vh;
+  max-width: 100vh;
+}
+.clock {
+  position: absolute;
+  top: 35vh;
+  left: -10vh;
+  color: lavender;
+  font-size: 80px;
+  font-family: sans-serif;
+  font-style: italic;
+}
