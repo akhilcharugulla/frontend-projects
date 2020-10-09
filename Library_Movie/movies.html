@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie_Library</title>
+    <link rel="stylesheet" href="movies.css" />
+  </head>
+
+  <body>
+    <header>MY LIBRARY</header>
+    <br />
+    <section id="defaultmovie">
+      <div id="movie-list">
+        <!-- <div class="movie_name">Harry Potter</div> -->
+      </div>
+    </section>
+
+    <input id="vision" type="button" value="New Movie" onclick="stat()" />
+    <section id="addmovie">
+      <form id="addmovieform">
+        <h1 style="margin-left: 100px">ADD A NEW MOVIE</h1>
+        <label for="nam">Movie Name </label>
+        <input id="nam" type="text" placeholder="HarryPotter" autofocus="on" />
+        <label for="direc">Movie Director</label>
+        <input id="direc" type="text" placeholder="DavidYates" />
+        <label>Movie Watched?</label><br />
+        <input id="tick" type="checkbox" />
+        <button type="button" onclick="AddMovie()">Add Movie</button>
+      </form>
+    </section>
+    <script src="movies.js"></script>
+  </body>
+</html>
