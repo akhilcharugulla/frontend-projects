@@ -5,6 +5,7 @@ body,
 a,
 button {
   color: #5f6368;
+  font-family: 'Roboto';
 }
 nav a,
 img {
@@ -14,12 +15,14 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
 }
 nav button {
-  background-color: #4285f4;
-  padding: 4px 10px 4px 10px;
+  background-color: #0b57d0;
+  padding: 10px 10px 10px 10px;
   border: 1px solid blue;
   color: white;
+  border-radius: 100px;
 }
 #main {
   max-height: 80vh;

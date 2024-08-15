@@ -15,7 +15,7 @@ html {
   text-align: center;
   box-shadow: 4px 4px 4px orange;
   border-radius: 10px;
-  height: 150px;
+  height: 160px;
   display: "block";
 }
 #main input {
@@ -43,6 +43,25 @@ label {
   box-shadow: 4px 4px 4px orange;
   border-radius: 10px;
   display: none;
+}
+
+#submitButton{
+color: black;
+background-color:white;
+border: 5px solid rgb(224, 96, 11);
+border-radius:10px;
+margin-left: 20px;
+padding: 12px 28px;
+font-size: 18px;
+font-weight: bold;
+font-family: monospace
+}
+
+#error{
+  color: black;
+  font-size: 15px;
+  margin-left: 1px;
+  font-family: monospace;
 }
 
 #inbox {

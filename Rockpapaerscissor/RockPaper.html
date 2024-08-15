@@ -4,8 +4,8 @@
     <title>Game</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="rpsstyle.css" />
-    <script src="rpsscript.js"></script>
+    <link rel="stylesheet" type="text/css" href="RockPaper.css" />
+    <script src="RockPaper.js"></script>
   </head>
   <body>
     <section id="main">
@@ -15,9 +15,10 @@
         type="text"
         id="sets"
         size="5"
-        oninput="setsFunction()"
         autofocus
       />
+      <button id="submitButton" onclick="setsFunction()">Submit</button>
+      <div id="error"></div>
     </section>
 
     <section id="aboutsets">

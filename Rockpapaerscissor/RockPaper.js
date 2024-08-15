@@ -9,11 +9,20 @@ var computerscore = 0,
 
 const setsFunction = () => {
   usersetvalue = document.getElementById("sets").value;
-  document.getElementById("main").style.display = "none";
-  document.getElementById("inbox").style.display = "block";
-  document.getElementById("displayscore").style.display = "block";
-  document.getElementById("aboutsets").style.display = "block";
-  document.getElementById("spanaboutsets").innerHTML = usersetvalue;
+  if(usersetvalue == null || undefined || '' ||" "||""){
+    document.getElementById("error").innerHTML = "You havent entered a number. Please Enter a number";
+  }
+  if(usersetvalue == "0"){
+    document.getElementById("error").innerHTML = "You enetred 0, Enter no greater than 0";
+  }
+
+  if(usersetvalue > 0){
+    document.getElementById("main").style.display = "none";
+    document.getElementById("inbox").style.display = "block";
+    document.getElementById("displayscore").style.display = "block";
+    document.getElementById("aboutsets").style.display = "block";
+    document.getElementById("spanaboutsets").innerHTML = usersetvalue;
+  }
 };
 
 const nextSet = (playercontainer, computercontainer) => {
